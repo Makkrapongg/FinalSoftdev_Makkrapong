@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: AddDogEnergy
   m_EditorClassIdentifier: 
   m_DefaultSprite: {fileID: 0}
-  m_DefaultGameObject: {fileID: 0}
-  m_DefaultColliderType: 1
+  m_DefaultGameObject: {fileID: 1151006664172224280, guid: 273471cd735eaef4caed288052133b6d, type: 3}
+  m_DefaultColliderType: 0
   m_TilingRules: []

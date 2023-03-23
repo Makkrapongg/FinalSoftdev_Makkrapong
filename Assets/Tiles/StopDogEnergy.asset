@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: StopDogEnergy
   m_EditorClassIdentifier: 
   m_DefaultSprite: {fileID: 0}
-  m_DefaultGameObject: {fileID: 0}
-  m_DefaultColliderType: 1
+  m_DefaultGameObject: {fileID: 6472081572425580262, guid: 1613af8d0a748e54299b2ff5f97ba3cf, type: 3}
+  m_DefaultColliderType: 0
   m_TilingRules: []
