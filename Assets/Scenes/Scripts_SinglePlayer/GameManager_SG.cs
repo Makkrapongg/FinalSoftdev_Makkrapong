@@ -19,7 +19,6 @@ public class GameManager_SG : MonoBehaviour
     public bool DeleteDogEnergy;
     public bool AddDogEnergy;
     public bool StopDogEnergy;
-    //public float speed = 8.0f;
 
     public int score;
 
@@ -223,7 +222,6 @@ public class GameManager_SG : MonoBehaviour
         SoundManager_SG.PlaySound("CatEnergyEaten");
         dogs[0].gameObject.SetActive(false);
         NormalFoodEaten(deleteDogEnergy);
-        DeleteDogEnergy = true;
         Invoke("ResetDelete", 6.0f);
     }
     public void AddDogEnergyEat(AddDogEnergy addDogEnergy)
@@ -231,7 +229,6 @@ public class GameManager_SG : MonoBehaviour
         SoundManager_SG.PlaySound("CatEnergyEaten");
         dogs[4].gameObject.SetActive(true);
         NormalFoodEaten(addDogEnergy);
-        AddDogEnergy = true;
         Invoke("ResetAdd", 6.0f);
     }
     public void StopDogEnergyEat(StopDogEnergy stopDogEnergy)
@@ -243,7 +240,6 @@ public class GameManager_SG : MonoBehaviour
         dogs[3].movement.speed = 0f;
         dogs[4].movement.speed = 5f;
         NormalFoodEaten(stopDogEnergy);
-        StopDogEnergy = true;
         Invoke("ResetStop", 3.0f);
     }
     public void ResetDelete()

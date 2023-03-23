@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DeleteDogEnergy : NormalFood_SG
 {
-    public int duration = 10;
+    public int duration = 6;
 
     protected override void Eat()
     {
