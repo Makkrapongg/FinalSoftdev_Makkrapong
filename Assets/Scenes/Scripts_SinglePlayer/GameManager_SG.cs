@@ -19,6 +19,7 @@ public class GameManager_SG : MonoBehaviour
     public bool DeleteDogEnergy;
     public bool AddDogEnergy;
     public bool StopDogEnergy;
+    //public float speed = 8.0f;
 
     public int score;
 
@@ -219,11 +220,10 @@ public class GameManager_SG : MonoBehaviour
     }
     public void DeleteDogEnergyEat(DeleteDogEnergy deleteDogEnergy)
     {
-        //deleteDogEnergy.gameObject.SetActive(false);
-        dogs[1].gameObject.SetActive(false);
+        dogs[0].gameObject.SetActive(false);
         NormalFoodEaten(deleteDogEnergy);
         DeleteDogEnergy = true;
-        Invoke("ResetEnergy", 8.0f);
+        Invoke("ResetDelete", 6.0f);
     }
     public void AddDogEnergyEat(AddDogEnergy addDogEnergy)
     {
@@ -233,9 +233,23 @@ public class GameManager_SG : MonoBehaviour
     }
     public void StopDogEnergyEat(StopDogEnergy stopDogEnergy)
     {
+        dogs[0].movement.speed = 0f;
+        dogs[1].movement.speed = 0f;
+        dogs[2].movement.speed = 0f;
+        dogs[3].movement.speed = 0f;
         NormalFoodEaten(stopDogEnergy);
         StopDogEnergy = true;
+        Invoke("ResetStop", 3.0f);
+    }
+    public void ResetDelete()
+    {
+        dogs[0].gameObject.SetActive(true);
+    }
+    public void ResetStop()
+    {
+        dogs[0].movement.speed = 5f;
+        dogs[1].movement.speed = 5f;
+        dogs[2].movement.speed = 5f;
+        dogs[3].movement.speed = 5f;
     }
 }
-
-
