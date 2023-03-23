@@ -53,7 +53,7 @@ public class GameManager_SG : MonoBehaviour
         {
             foods.gameObject.SetActive(true);
         }
-        for (int i = 0; i < this.dogs.Length; i++)
+        for (int i = 0; i < 4; i++)
         {
             if (dogs[i].gameObject.name == "Dog_Red_SG")
             {
@@ -229,9 +229,10 @@ public class GameManager_SG : MonoBehaviour
     public void AddDogEnergyEat(AddDogEnergy addDogEnergy)
     {
         SoundManager_SG.PlaySound("CatEnergyEaten");
-        dogs[1].gameObject.SetActive(true);
+        dogs[4].gameObject.SetActive(true);
         NormalFoodEaten(addDogEnergy);
         AddDogEnergy = true;
+        Invoke("ResetAdd", 6.0f);
     }
     public void StopDogEnergyEat(StopDogEnergy stopDogEnergy)
     {
@@ -240,6 +241,7 @@ public class GameManager_SG : MonoBehaviour
         dogs[1].movement.speed = 0f;
         dogs[2].movement.speed = 0f;
         dogs[3].movement.speed = 0f;
+        dogs[4].movement.speed = 5f;
         NormalFoodEaten(stopDogEnergy);
         StopDogEnergy = true;
         Invoke("ResetStop", 3.0f);
@@ -248,11 +250,16 @@ public class GameManager_SG : MonoBehaviour
     {
         dogs[0].gameObject.SetActive(true);
     }
+    public void ResetAdd()
+    {
+        dogs[4].gameObject.SetActive(false);
+    }
     public void ResetStop()
     {
         dogs[0].movement.speed = 5f;
         dogs[1].movement.speed = 5f;
         dogs[2].movement.speed = 5f;
         dogs[3].movement.speed = 5f;
+        dogs[4].movement.speed = 5f;
     }
 }
