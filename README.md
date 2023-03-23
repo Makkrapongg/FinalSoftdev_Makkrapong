@@ -13,3 +13,5 @@
   - Add dog number 5 and edit duration for dog
 ### Sixth Commit
   - Fix some duration in item script
+### Seventh Commit
+  - Fix speed in method StopDogEnergy
