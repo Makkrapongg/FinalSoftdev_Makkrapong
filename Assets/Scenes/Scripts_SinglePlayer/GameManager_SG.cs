@@ -220,6 +220,7 @@ public class GameManager_SG : MonoBehaviour
     }
     public void DeleteDogEnergyEat(DeleteDogEnergy deleteDogEnergy)
     {
+        SoundManager_SG.PlaySound("CatEnergyEaten");
         dogs[0].gameObject.SetActive(false);
         NormalFoodEaten(deleteDogEnergy);
         DeleteDogEnergy = true;
@@ -227,12 +228,14 @@ public class GameManager_SG : MonoBehaviour
     }
     public void AddDogEnergyEat(AddDogEnergy addDogEnergy)
     {
+        SoundManager_SG.PlaySound("CatEnergyEaten");
         dogs[1].gameObject.SetActive(true);
         NormalFoodEaten(addDogEnergy);
         AddDogEnergy = true;
     }
     public void StopDogEnergyEat(StopDogEnergy stopDogEnergy)
     {
+        SoundManager_SG.PlaySound("CatEnergyEaten");
         dogs[0].movement.speed = 0f;
         dogs[1].movement.speed = 0f;
         dogs[2].movement.speed = 0f;
